@@ -30,11 +30,11 @@ my_data <- read_csv(here("data", "Personal_Data_ENVS194DS.csv")) # read in perso
 
 # Problem 1. Slough soil salinity
 
-## A. An appropriate test
+## a. An appropriate test
 
 The appropriate tests to determine the strength of the relationship between salinity and California pickleweed biomass are the Pearson's correlation (r) test and Spearman's rank correlation (p) test. The Pearson's correlation is a parametric test that measures the strength of the relationship between salinity and biomass and assumes that observations are independent and both variables are continuous and normally distributed with a linear relationship. The Spearman rank correlation is non-parametric and measures the monotonic relationship between salinity and biomass for independent observations by evaluating whether the rank order of soil salinity values corresponds with the rank order of pickleweed biomass values (this test does not assume normality or a linear relationship).
 
-## B. Create a visualization
+## b. Create a visualization
 
 ```{r}
 #| label: Visualization
@@ -54,7 +54,7 @@ ggplot(data = salinity, # salinity data frame
   theme_minimal() # different theme than default
 ```
 
-## C. Check your assumptions and run your test
+## c. Check your assumptions and run your test
 
 ### Check for linear relationship between variables and monotonic relationship between variables
 
@@ -149,6 +149,7 @@ Both Pearson's correlation (r = 0.53, p = 0.009) and Spearman's rank correlation
 
 # Problem 2. Personal Data 
 
+## a. Updating your visualizations
 ```{r}
 #| label: clean-personal-data
 #| message: false
@@ -156,6 +157,7 @@ my_clean_data <- my_data |> # create object my_clean_data from my_data
   clean_names()
 ```
 
+### Visualization of reading location (categorical predictor variable) vs pages read (response variable)
 ```{r}
 #| label: personal-categorical-data
 #| message: false
@@ -172,12 +174,14 @@ geom_jitter (height = 0, # no vertical jitter
              width = 0.2) + # narrowing width of jitter
 labs(x = "Reading Location", # x-axis title
      y = "Pages Read", # y-axis title
-     title = "Pages Read by Reading Location") + # graph title
+     title = "Pages Read by Reading Location", # graph title
+      subtitle = "Most recent observation: Februrary 28, 2026") + # most recent date)
    scale_color_brewer(palette = "Dark2") + # use Dark2 color palette from colorbrewer project
   theme_minimal() + # set theme different from default 
   theme(legend.position = "none") # remove legend
 ```
 
+### Visualization of reading duration (continuous predictor variable) vs pages read (response variable)
 
 ```{r}
 #| label: personal-continuous-data
@@ -192,7 +196,16 @@ ggplot(data = my_clean_data, # use my_clean_data
              alpha = 0.7) + # make points more transparent
    labs(x = "Reading Duration (minutes)", # x-axis title
        y = "Pages Read", # y-axis title
-       title = "Longer Reading Sessions Lead to More Pages Read") + # descriptive title 
+       title = "Longer Reading Sessions Lead to More Pages Read", # graph title
+      subtitle = "Most recent observation: Februrary 28, 2026") + # most recent date
    theme_bw() # change theme from default
 ```
+
+## b. Captions
+
+Figure 1. The distribution of pages read by reading location (campus, coffee shop, home, other, and outside) across reading sessions is represented by the boxplot. Each point represents a reading session. Reading sessions in "other" locations had the highest median pages read (around 63 pages), while home reading sessions showed the most variability and lowest median (around 15 pages).
+
+Figure 2. The relationship between reading duration (minutes) and pages read across all reading sessions is represented in a scatterplot. The most recent observation was February 28, 2026, and each blue point represents a reading session.
+
+
 

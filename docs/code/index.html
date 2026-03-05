@@ -87,9 +87,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#set-up" id="toc-set-up" class="nav-link active" data-scroll-target="#set-up">Set Up</a></li>
   <li><a href="#problem-1.-slough-soil-salinity" id="toc-problem-1.-slough-soil-salinity" class="nav-link" data-scroll-target="#problem-1.-slough-soil-salinity">Problem 1. Slough soil salinity</a>
   <ul class="collapse">
-  <li><a href="#a.-an-appropriate-test" id="toc-a.-an-appropriate-test" class="nav-link" data-scroll-target="#a.-an-appropriate-test">A. An appropriate test</a></li>
-  <li><a href="#b.-create-a-visualization" id="toc-b.-create-a-visualization" class="nav-link" data-scroll-target="#b.-create-a-visualization">B. Create a visualization</a></li>
-  <li><a href="#c.-check-your-assumptions-and-run-your-test" id="toc-c.-check-your-assumptions-and-run-your-test" class="nav-link" data-scroll-target="#c.-check-your-assumptions-and-run-your-test">C. Check your assumptions and run your test</a>
+  <li><a href="#a.-an-appropriate-test" id="toc-a.-an-appropriate-test" class="nav-link" data-scroll-target="#a.-an-appropriate-test">a. An appropriate test</a></li>
+  <li><a href="#b.-create-a-visualization" id="toc-b.-create-a-visualization" class="nav-link" data-scroll-target="#b.-create-a-visualization">b. Create a visualization</a></li>
+  <li><a href="#c.-check-your-assumptions-and-run-your-test" id="toc-c.-check-your-assumptions-and-run-your-test" class="nav-link" data-scroll-target="#c.-check-your-assumptions-and-run-your-test">c.&nbsp;Check your assumptions and run your test</a>
   <ul class="collapse">
   <li><a href="#check-for-linear-relationship-between-variables-and-monotonic-relationship-between-variables" id="toc-check-for-linear-relationship-between-variables-and-monotonic-relationship-between-variables" class="nav-link" data-scroll-target="#check-for-linear-relationship-between-variables-and-monotonic-relationship-between-variables">Check for linear relationship between variables and monotonic relationship between variables</a></li>
   <li><a href="#check-that-variables-are-continuous-and-normally-distributed" id="toc-check-that-variables-are-continuous-and-normally-distributed" class="nav-link" data-scroll-target="#check-that-variables-are-continuous-and-normally-distributed">Check that variables are continuous and normally distributed</a></li>
@@ -99,7 +99,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#e.-test-implications" id="toc-e.-test-implications" class="nav-link" data-scroll-target="#e.-test-implications">e. Test implications</a></li>
   <li><a href="#f.-double-check-your-work" id="toc-f.-double-check-your-work" class="nav-link" data-scroll-target="#f.-double-check-your-work">f.&nbsp;Double check your work</a></li>
   </ul></li>
-  <li><a href="#problem-2.-personal-data" id="toc-problem-2.-personal-data" class="nav-link" data-scroll-target="#problem-2.-personal-data">Problem 2. Personal Data</a></li>
+  <li><a href="#problem-2.-personal-data" id="toc-problem-2.-personal-data" class="nav-link" data-scroll-target="#problem-2.-personal-data">Problem 2. Personal Data</a>
+  <ul class="collapse">
+  <li><a href="#a.-updating-your-visualizations" id="toc-a.-updating-your-visualizations" class="nav-link" data-scroll-target="#a.-updating-your-visualizations">a. Updating your visualizations</a>
+  <ul class="collapse">
+  <li><a href="#visualization-of-reading-location-categorical-predictor-variable-vs-pages-read-response-variable" id="toc-visualization-of-reading-location-categorical-predictor-variable-vs-pages-read-response-variable" class="nav-link" data-scroll-target="#visualization-of-reading-location-categorical-predictor-variable-vs-pages-read-response-variable">Visualization of reading location (categorical predictor variable) vs pages read (response variable)</a></li>
+  <li><a href="#visualization-of-reading-duration-continuous-predictor-variable-vs-pages-read-response-variable" id="toc-visualization-of-reading-duration-continuous-predictor-variable-vs-pages-read-response-variable" class="nav-link" data-scroll-target="#visualization-of-reading-duration-continuous-predictor-variable-vs-pages-read-response-variable">Visualization of reading duration (continuous predictor variable) vs pages read (response variable)</a></li>
+  </ul></li>
+  <li><a href="#b.-captions" id="toc-b.-captions" class="nav-link" data-scroll-target="#b.-captions">b. Captions</a></li>
+  </ul></li>
   </ul>
 </nav>
 </div>
@@ -153,11 +161,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="problem-1.-slough-soil-salinity" class="level1">
 <h1>Problem 1. Slough soil salinity</h1>
 <section id="a.-an-appropriate-test" class="level2">
-<h2 class="anchored" data-anchor-id="a.-an-appropriate-test">A. An appropriate test</h2>
+<h2 class="anchored" data-anchor-id="a.-an-appropriate-test">a. An appropriate test</h2>
 <p>The appropriate tests to determine the strength of the relationship between salinity and California pickleweed biomass are the Pearson’s correlation (r) test and Spearman’s rank correlation (p) test. The Pearson’s correlation is a parametric test that measures the strength of the relationship between salinity and biomass and assumes that observations are independent and both variables are continuous and normally distributed with a linear relationship. The Spearman rank correlation is non-parametric and measures the monotonic relationship between salinity and biomass for independent observations by evaluating whether the rank order of soil salinity values corresponds with the rank order of pickleweed biomass values (this test does not assume normality or a linear relationship).</p>
 </section>
 <section id="b.-create-a-visualization" class="level2">
-<h2 class="anchored" data-anchor-id="b.-create-a-visualization">B. Create a visualization</h2>
+<h2 class="anchored" data-anchor-id="b.-create-a-visualization">b. Create a visualization</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># base layer: ggplot </span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> salinity, <span class="co"># salinity data frame</span></span>
@@ -182,7 +190,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 <section id="c.-check-your-assumptions-and-run-your-test" class="level2">
-<h2 class="anchored" data-anchor-id="c.-check-your-assumptions-and-run-your-test">C. Check your assumptions and run your test</h2>
+<h2 class="anchored" data-anchor-id="c.-check-your-assumptions-and-run-your-test">c.&nbsp;Check your assumptions and run your test</h2>
 <section id="check-for-linear-relationship-between-variables-and-monotonic-relationship-between-variables" class="level3">
 <h3 class="anchored" data-anchor-id="check-for-linear-relationship-between-variables-and-monotonic-relationship-between-variables">Check for linear relationship between variables and monotonic relationship between variables</h3>
 <div class="cell">
@@ -306,10 +314,14 @@ sample estimates:
 </section>
 <section id="problem-2.-personal-data" class="level1">
 <h1>Problem 2. Personal Data</h1>
+<section id="a.-updating-your-visualizations" class="level2">
+<h2 class="anchored" data-anchor-id="a.-updating-your-visualizations">a. Updating your visualizations</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>my_clean_data <span class="ot">&lt;-</span> my_data <span class="sc">|&gt;</span> <span class="co"># create object my_clean_data from my_data</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<section id="visualization-of-reading-location-categorical-predictor-variable-vs-pages-read-response-variable" class="level3">
+<h3 class="anchored" data-anchor-id="visualization-of-reading-location-categorical-predictor-variable-vs-pages-read-response-variable">Visualization of reading location (categorical predictor variable) vs pages read (response variable)</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># base layer: ggplot </span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> my_clean_data, <span class="co"># use clean data</span></span>
@@ -324,10 +336,11 @@ sample estimates:
 <span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">width =</span> <span class="fl">0.2</span>) <span class="sc">+</span> <span class="co"># narrowing width of jitter</span></span>
 <span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Reading Location"</span>, <span class="co"># x-axis title</span></span>
 <span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> <span class="st">"Pages Read"</span>, <span class="co"># y-axis title</span></span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>     <span class="at">title =</span> <span class="st">"Pages Read by Reading Location"</span>) <span class="sc">+</span> <span class="co"># graph title</span></span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>   <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>) <span class="sc">+</span> <span class="co"># use Dark2 color palette from colorbrewer project</span></span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="co"># set theme different from default </span></span>
-<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="co"># remove legend</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>     <span class="at">title =</span> <span class="st">"Pages Read by Reading Location"</span>, <span class="co"># graph title</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">subtitle =</span> <span class="st">"Most recent observation: Februrary 28, 2026"</span>) <span class="sc">+</span> <span class="co"># most recent date)</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>   <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>) <span class="sc">+</span> <span class="co"># use Dark2 color palette from colorbrewer project</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="co"># set theme different from default </span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="co"># remove legend</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -336,6 +349,9 @@ sample estimates:
 </div>
 </div>
 </div>
+</section>
+<section id="visualization-of-reading-duration-continuous-predictor-variable-vs-pages-read-response-variable" class="level3">
+<h3 class="anchored" data-anchor-id="visualization-of-reading-duration-continuous-predictor-variable-vs-pages-read-response-variable">Visualization of reading duration (continuous predictor variable) vs pages read (response variable)</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#base layer: ggplot </span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> my_clean_data, <span class="co"># use my_clean_data</span></span>
@@ -347,8 +363,9 @@ sample estimates:
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span> <span class="co"># make points more transparent</span></span>
 <span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>   <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Reading Duration (minutes)"</span>, <span class="co"># x-axis title</span></span>
 <span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Pages Read"</span>, <span class="co"># y-axis title</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Longer Reading Sessions Lead to More Pages Read"</span>) <span class="sc">+</span> <span class="co"># descriptive title </span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>   <span class="fu">theme_bw</span>() <span class="co"># change theme from default</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Longer Reading Sessions Lead to More Pages Read"</span>, <span class="co"># graph title</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">subtitle =</span> <span class="st">"Most recent observation: Februrary 28, 2026"</span>) <span class="sc">+</span> <span class="co"># most recent date</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>   <span class="fu">theme_bw</span>() <span class="co"># change theme from default</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -357,6 +374,13 @@ sample estimates:
 </div>
 </div>
 </div>
+</section>
+</section>
+<section id="b.-captions" class="level2">
+<h2 class="anchored" data-anchor-id="b.-captions">b. Captions</h2>
+<p>Figure 1. The distribution of pages read by reading location (campus, coffee shop, home, other, and outside) across reading sessions is represented by the boxplot. Each point represents a reading session. Reading sessions in “other” locations had the highest median pages read (around 63 pages), while home reading sessions showed the most variability and lowest median (around 15 pages).</p>
+<p>Figure 2. The relationship between reading duration (minutes) and pages read across all reading sessions is represented in a scatterplot. The most recent observation was February 28, 2026, and each blue point represents a reading session.</p>
+</section>
 </section>
 
 </main>
