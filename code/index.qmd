@@ -32,7 +32,7 @@ my_data <- read_csv(here("data", "Personal_Data_ENVS194DS.csv")) # read in perso
 
 ## a. An appropriate test
 
-The appropriate tests to determine the strength of the relationship between salinity and California pickleweed biomass are the Pearson's correlation (r) test and Spearman's rank correlation (p) test. The Pearson's correlation is a parametric test that measures the strength of the relationship between salinity and biomass and assumes that observations are independent and both variables are continuous and normally distributed with a linear relationship. The Spearman rank correlation is non-parametric and measures the monotonic relationship between salinity and biomass for independent observations by evaluating whether the rank order of soil salinity values corresponds with the rank order of pickleweed biomass values (this test does not assume normality or a linear relationship).
+The appropriate tests to determine the strength of the relationship between salinity and California pickleweed biomass are the Pearson's correlation (r) test and Spearman's rank correlation (p) test. The Pearson's correlation is a parametric test that measures the strength of the relationship between salinity and biomass and assumes that observations are independent and both variables are continuous and normally distributed with a linear relationship. The Spearman's rank correlation is non-parametric and measures the monotonic relationship between salinity and biomass for independent observations by evaluating whether the rank order of soil salinity values corresponds with the rank order of pickleweed biomass values (this test does not assume normality or a linear relationship).
 
 ## b. Create a visualization
 
