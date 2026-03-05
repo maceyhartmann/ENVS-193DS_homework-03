@@ -124,3 +124,8 @@ cor.test(salinity$salinity_mS_cm, # soil salinity (mS/cm) as first variable
          method = "pearson") # specifying Pearson's correlation as the method
 ```
 
+# d. Results communication
+
+To evaluate the strength of the relationship between pickleweed biomass and soil salinity, I used a Pearson's correlation test because both variables are continuous, approximately normally distributed based on the QQ plots, and the scatterplot suggested a linear relationship between the two variables. There is a statistically significant, moderate positive correlation between soil salinity and California pickleweed biomass, meaning that pickleweed biomass tends to increase as soil salinity increases (Pearson's r = 0.53, t(21) = 2.90, p = 0.009, ⍺ = 0.05).
+
+
