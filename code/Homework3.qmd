@@ -9,9 +9,9 @@ execute:
   message: false # use this to make sure messages don't show up
 ---
 
-Link to my github: [Github Repository](https://github.com/maceyhartmann/ENVS-193DS_homework-03.git) 
+Link to my github: [Github Repository](https://github.com/maceyhartmann/ENVS-193DS_homework-03.git)
 
-# Set Up 
+# Set Up
 
 ```{r}
 #| label: Packages and Data
@@ -27,13 +27,14 @@ library(janitor) # cleaning data frames
 salinity <- read.csv(here("data", "salinity-pickleweed.csv")) # store salinity data as salinity object
 ```
 
-# Problem 1. Slough soil salinity 
+# Problem 1. Slough soil salinity
 
 ## A. An appropriate test
 
-The appropriate tests to determine the strength of the relationship between salinity and California pickleweed biomass are the Pearson's correlation (r) test and Spearman's rank correlation (p) test. The Pearson's correlation is a parametric test that measures the strength of the relationship between salinity and biomass and assumes that observations are independent and both variables are continuous and normally distributed with a linear relationship. The Spearman rank correlation is non-parametric and measures the monotonic relationship between salinity and biomass for independent observations by evaluating whether the rank order of soil salinity values corresponds with the rank order of pickleweed biomass values (this test does not assume normality or a linear relationship). 
+The appropriate tests to determine the strength of the relationship between salinity and California pickleweed biomass are the Pearson's correlation (r) test and Spearman's rank correlation (p) test. The Pearson's correlation is a parametric test that measures the strength of the relationship between salinity and biomass and assumes that observations are independent and both variables are continuous and normally distributed with a linear relationship. The Spearman rank correlation is non-parametric and measures the monotonic relationship between salinity and biomass for independent observations by evaluating whether the rank order of soil salinity values corresponds with the rank order of pickleweed biomass values (this test does not assume normality or a linear relationship).
 
 ## B. Create a visualization
+
 ```{r}
 #| label: Visualization
 #| message: false
@@ -52,6 +53,74 @@ ggplot(data = salinity, # salinity data frame
   theme_minimal() # different theme than default
 ```
 
+# C. Check your assumptions and run your test
 
+## Check for linear relationship between variables and monotonic relationship between variables
 
+```{r}
+#| label: Visual Check
+#| message: false
+#| warning: false
+# base layer: ggplot 
+ggplot(data = salinity, # salinity data frame
+       aes(x = salinity_mS_cm, # salinity on x axis
+           y = pickleweed)) + # pickleweed biomass on y axis
+  # first layer: scatterplot
+  geom_point(size = 3, # larger points
+             color = "firebrick4", # color red
+             alpha = 0.5) + # slight transparency
+  # graph and axis titles
+  labs(x = "Soil Salinity (mS/cm)", # x axis title
+       y = "Pickleweed Biomass (g)", # y axis title
+       title = "Relationship between Soil Salinity and Pickleweed Biomass") + # graph title
+  theme_minimal() # different theme than default
+```
+
+## Check that variables are continuous and normally distributed
+
+```{r}
+#| label: QQ-Plot_Salinity
+#| message: false
+#| warning: false
+# base layer: ggplot call
+ggplot(data = salinity, # starting data frame
+       aes(sample = salinity_mS_cm)) + # y-axis for QQ plot (no x-axis)
+  # first layer: QQ reference line 
+  geom_qq_line(color = "blue") + # color the QQ reference line blue 
+  # second layer: QQ plot
+  geom_qq() + 
+  labs(title = "QQ Plot Salinity", # descriptive title
+    x = "Theoretical Quantiles", # x axis label
+    y = "Sample Quantiles") + # y axis label
+  theme_light() # applying a new theme
+```
+
+```{r}
+#| label: QQ-Plot-Pickleweed
+#| message: false
+#| warning: false
+# base layer: ggplot call
+ggplot(data = salinity, # starting data frame
+       aes(sample = pickleweed)) + # y-axis for QQ plot (no x-axis)
+  # first layer: QQ reference line 
+  geom_qq_line(color = "blue") + # color the QQ reference line blue 
+  # second layer: QQ plot
+  geom_qq() + 
+  labs(title = "QQ Plot Pickleweed Biomass", # descriptive title
+    x = "Theoretical Quantiles", # x axis label
+    y = "Sample Quantiles") + # y axis label
+  theme_light() # applying a new theme
+```
+
+To determine whether Pearson's or Spearman's correlation was appropriate, I checked two assumptions: (1) that the relationship between soil salinity (mS/cm) and pickleweed biomass (g) was linear and monotonic, and (2) that both variables were continuous and approximately normally distributed. I checked the linearity assumption visually using a scatterplot, and assessed normality using QQ plots for both soil salinity and pickleweed biomass. Both QQ plots showed points falling reasonably close to the reference line with no major deviations, and the scatterplot suggested a positive linear trend, indicating that the assumptions for Pearson's correlation were sufficiently met.
+
+## Run Pearsons Correlation Test between soil salinity and pickleweed biomass
+```{r}
+#| label: Pearsons Correlation
+#| message: false
+#| warning: false
+cor.test(salinity$salinity_mS_cm, # soil salinity (mS/cm) as first variable
+         salinity$pickleweed, # pickleweed biomass (g) as second variable
+         method = "pearson") # specifying Pearson's correlation as the method
+```
 
