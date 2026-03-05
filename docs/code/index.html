@@ -89,7 +89,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#a.-an-appropriate-test" id="toc-a.-an-appropriate-test" class="nav-link" data-scroll-target="#a.-an-appropriate-test">A. An appropriate test</a></li>
   <li><a href="#b.-create-a-visualization" id="toc-b.-create-a-visualization" class="nav-link" data-scroll-target="#b.-create-a-visualization">B. Create a visualization</a></li>
-  </ul></li>
   <li><a href="#c.-check-your-assumptions-and-run-your-test" id="toc-c.-check-your-assumptions-and-run-your-test" class="nav-link" data-scroll-target="#c.-check-your-assumptions-and-run-your-test">C. Check your assumptions and run your test</a>
   <ul class="collapse">
   <li><a href="#check-for-linear-relationship-between-variables-and-monotonic-relationship-between-variables" id="toc-check-for-linear-relationship-between-variables-and-monotonic-relationship-between-variables" class="nav-link" data-scroll-target="#check-for-linear-relationship-between-variables-and-monotonic-relationship-between-variables">Check for linear relationship between variables and monotonic relationship between variables</a></li>
@@ -98,6 +97,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#d.-results-communication" id="toc-d.-results-communication" class="nav-link" data-scroll-target="#d.-results-communication">d.&nbsp;Results communication</a></li>
   <li><a href="#e.-test-implications" id="toc-e.-test-implications" class="nav-link" data-scroll-target="#e.-test-implications">e. Test implications</a></li>
+  <li><a href="#f.-double-check-your-work" id="toc-f.-double-check-your-work" class="nav-link" data-scroll-target="#f.-double-check-your-work">f.&nbsp;Double check your work</a></li>
+  </ul></li>
   </ul>
 </nav>
 </div>
@@ -178,11 +179,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-</section>
-<section id="c.-check-your-assumptions-and-run-your-test" class="level1">
-<h1>C. Check your assumptions and run your test</h1>
-<section id="check-for-linear-relationship-between-variables-and-monotonic-relationship-between-variables" class="level2">
-<h2 class="anchored" data-anchor-id="check-for-linear-relationship-between-variables-and-monotonic-relationship-between-variables">Check for linear relationship between variables and monotonic relationship between variables</h2>
+<section id="c.-check-your-assumptions-and-run-your-test" class="level2">
+<h2 class="anchored" data-anchor-id="c.-check-your-assumptions-and-run-your-test">C. Check your assumptions and run your test</h2>
+<section id="check-for-linear-relationship-between-variables-and-monotonic-relationship-between-variables" class="level3">
+<h3 class="anchored" data-anchor-id="check-for-linear-relationship-between-variables-and-monotonic-relationship-between-variables">Check for linear relationship between variables and monotonic relationship between variables</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># base layer: ggplot </span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> salinity, <span class="co"># salinity data frame</span></span>
@@ -206,8 +206,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="check-that-variables-are-continuous-and-normally-distributed" class="level2">
-<h2 class="anchored" data-anchor-id="check-that-variables-are-continuous-and-normally-distributed">Check that variables are continuous and normally distributed</h2>
+<section id="check-that-variables-are-continuous-and-normally-distributed" class="level3">
+<h3 class="anchored" data-anchor-id="check-that-variables-are-continuous-and-normally-distributed">Check that variables are continuous and normally distributed</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># base layer: ggplot call</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> salinity, <span class="co"># starting data frame</span></span>
@@ -250,8 +250,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>To determine whether Pearson’s or Spearman’s correlation was appropriate, I checked two assumptions: (1) that the relationship between soil salinity (mS/cm) and pickleweed biomass (g) was linear and monotonic, and (2) that both variables were continuous and approximately normally distributed. I checked the linearity assumption visually using a scatterplot, and assessed normality using QQ plots for both soil salinity and pickleweed biomass. Both QQ plots showed points falling reasonably close to the reference line with no major deviations, and the scatterplot suggested a positive linear trend, indicating that the assumptions for Pearson’s correlation were sufficiently met.</p>
 </section>
-<section id="run-pearsons-correlation-test-between-soil-salinity-and-pickleweed-biomass" class="level2">
-<h2 class="anchored" data-anchor-id="run-pearsons-correlation-test-between-soil-salinity-and-pickleweed-biomass">Run Pearsons Correlation Test between soil salinity and pickleweed biomass</h2>
+<section id="run-pearsons-correlation-test-between-soil-salinity-and-pickleweed-biomass" class="level3">
+<h3 class="anchored" data-anchor-id="run-pearsons-correlation-test-between-soil-salinity-and-pickleweed-biomass">Run Pearsons Correlation Test between soil salinity and pickleweed biomass</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(salinity<span class="sc">$</span>salinity_mS_cm, <span class="co"># soil salinity (mS/cm) as first variable</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>         salinity<span class="sc">$</span>pickleweed, <span class="co"># pickleweed biomass (g) as second variable</span></span>
@@ -272,13 +272,35 @@ sample estimates:
 </div>
 </section>
 </section>
-<section id="d.-results-communication" class="level1">
-<h1>d.&nbsp;Results communication</h1>
+<section id="d.-results-communication" class="level2">
+<h2 class="anchored" data-anchor-id="d.-results-communication">d.&nbsp;Results communication</h2>
 <p>To evaluate the strength of the relationship between pickleweed biomass and soil salinity, I used a Pearson’s correlation test because both variables are continuous, approximately normally distributed based on the QQ plots, and the scatterplot suggested a linear relationship between the two variables. There is a statistically significant, moderate positive correlation between soil salinity and California pickleweed biomass, meaning that pickleweed biomass tends to increase as soil salinity increases (Pearson’s r = 0.53, t(21) = 2.90, p = 0.009, ⍺ = 0.05).</p>
 </section>
-<section id="e.-test-implications" class="level1">
-<h1>e. Test implications</h1>
+<section id="e.-test-implications" class="level2">
+<h2 class="anchored" data-anchor-id="e.-test-implications">e. Test implications</h2>
 <p>Our analysis found a moderate positive relationship between soil salinity and pickleweed biomass, suggesting that plants growing in saltier soils tend to produce more biomass. This means that when selecting planting locations along the slough, prioritizing areas with higher soil salinity may support better pickleweed growth and restoration success. However, since this relationship is moderate rather than strong, other factors beyond salinity are likely also influencing plant growth and should be considered when making planting decisions.</p>
+</section>
+<section id="f.-double-check-your-work" class="level2">
+<h2 class="anchored" data-anchor-id="f.-double-check-your-work">f.&nbsp;Double check your work</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># run Spearman rank correlation</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(salinity<span class="sc">$</span>salinity_mS_cm, <span class="co"># soil salinity (mS/cm) as predictor</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>         salinity<span class="sc">$</span>pickleweed, <span class="co"># pickleweed biomass (g) as response</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">method =</span> <span class="st">"spearman"</span>) <span class="co"># specifying Spearman's correlation as the method</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Spearman's rank correlation rho
+
+data:  salinity$salinity_mS_cm and salinity$pickleweed
+S = 824, p-value = 0.003426
+alternative hypothesis: true rho is not equal to 0
+sample estimates:
+      rho 
+0.5928854 </code></pre>
+</div>
+</div>
+<p>Both Pearson’s correlation (r = 0.53, p = 0.009) and Spearman’s rank correlation (ρ = 0.59, p = 0.003) led to the same decision to reject the null hypothesis that there is no relationship between soil salinity and pickleweed biomass. Both tests indicated a moderate positive relationship between the two variables, suggesting that as soil salinity (mS/cm) increases, pickleweed biomass (g) tends to increase as well. While Pearson’s evaluated the linear relationship between the raw values of the two variables, Spearman’s evaluated the monotonic relationship between their rank orders, yet both arrived at the same conclusion.</p>
+</section>
 </section>
 
 </main>

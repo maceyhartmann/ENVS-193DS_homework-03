@@ -53,9 +53,9 @@ ggplot(data = salinity, # salinity data frame
   theme_minimal() # different theme than default
 ```
 
-# C. Check your assumptions and run your test
+## C. Check your assumptions and run your test
 
-## Check for linear relationship between variables and monotonic relationship between variables
+### Check for linear relationship between variables and monotonic relationship between variables
 
 ```{r}
 #| label: Visual Check
@@ -76,7 +76,7 @@ ggplot(data = salinity, # salinity data frame
   theme_minimal() # different theme than default
 ```
 
-## Check that variables are continuous and normally distributed
+### Check that variables are continuous and normally distributed
 
 ```{r}
 #| label: QQ-Plot_Salinity
@@ -114,7 +114,7 @@ ggplot(data = salinity, # starting data frame
 
 To determine whether Pearson's or Spearman's correlation was appropriate, I checked two assumptions: (1) that the relationship between soil salinity (mS/cm) and pickleweed biomass (g) was linear and monotonic, and (2) that both variables were continuous and approximately normally distributed. I checked the linearity assumption visually using a scatterplot, and assessed normality using QQ plots for both soil salinity and pickleweed biomass. Both QQ plots showed points falling reasonably close to the reference line with no major deviations, and the scatterplot suggested a positive linear trend, indicating that the assumptions for Pearson's correlation were sufficiently met.
 
-## Run Pearsons Correlation Test between soil salinity and pickleweed biomass
+### Run Pearsons Correlation Test between soil salinity and pickleweed biomass
 ```{r}
 #| label: Pearsons Correlation
 #| message: false
@@ -124,12 +124,25 @@ cor.test(salinity$salinity_mS_cm, # soil salinity (mS/cm) as first variable
          method = "pearson") # specifying Pearson's correlation as the method
 ```
 
-# d. Results communication
+## d. Results communication
 
 To evaluate the strength of the relationship between pickleweed biomass and soil salinity, I used a Pearson's correlation test because both variables are continuous, approximately normally distributed based on the QQ plots, and the scatterplot suggested a linear relationship between the two variables. There is a statistically significant, moderate positive correlation between soil salinity and California pickleweed biomass, meaning that pickleweed biomass tends to increase as soil salinity increases (Pearson's r = 0.53, t(21) = 2.90, p = 0.009, ⍺ = 0.05).
 
-# e. Test implications
+## e. Test implications
 
 Our analysis found a moderate positive relationship between soil salinity and pickleweed biomass, suggesting that plants growing in saltier soils tend to produce more biomass. This means that when selecting planting locations along the slough, prioritizing areas with higher soil salinity may support better pickleweed growth and restoration success. However, since this relationship is moderate rather than strong, other factors beyond salinity are likely also influencing plant growth and should be considered when making planting decisions.
 
+## f. Double check your work 
+
+```{r}
+#| label: Spearmans Correlation
+#| message: false
+#| warning: false
+# run Spearman rank correlation
+cor.test(salinity$salinity_mS_cm, # soil salinity (mS/cm) as predictor
+         salinity$pickleweed, # pickleweed biomass (g) as response
+         method = "spearman") # specifying Spearman's correlation as the method
+```
+
+Both Pearson's correlation (r = 0.53, p = 0.009) and Spearman's rank correlation (ρ = 0.59, p = 0.003) led to the same decision to reject the null hypothesis that there is no relationship between soil salinity and pickleweed biomass. Both tests indicated a moderate positive relationship between the two variables, suggesting that as soil salinity (mS/cm) increases, pickleweed biomass (g) tends to increase as well. While Pearson's evaluated the linear relationship between the raw values of the two variables, Spearman's evaluated the monotonic relationship between their rank orders, yet both arrived at the same conclusion.
 
