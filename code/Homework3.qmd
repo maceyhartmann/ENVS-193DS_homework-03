@@ -9,3 +9,49 @@ execute:
   message: false # use this to make sure messages don't show up
 ---
 
+Link to my github: [Github Repository](https://github.com/maceyhartmann/ENVS-193DS_homework-03.git) 
+
+# Set Up 
+
+```{r}
+#| label: Packages and Data
+#| message: false
+#| warning: false
+
+# read in packages here
+library(tidyverse) # general use
+library(here) # file organization
+library(janitor) # cleaning data frames
+
+#read in data here
+salinity <- read.csv(here("data", "salinity-pickleweed.csv")) # store salinity data as salinity object
+```
+
+# Problem 1. Slough soil salinity 
+
+## A. An appropriate test
+
+The appropriate tests to determine the strength of the relationship between salinity and California pickleweed biomass are the Pearson's correlation (r) test and Spearman's rank correlation (p) test. The Pearson's correlation is a parametric test that measures the strength of the relationship between salinity and biomass and assumes that observations are independent and both variables are continuous and normally distributed with a linear relationship. The Spearman rank correlation is non-parametric and measures the monotonic relationship between salinity and biomass for independent observations by evaluating whether the rank order of soil salinity values corresponds with the rank order of pickleweed biomass values (this test does not assume normality or a linear relationship). 
+
+## B. Create a visualization
+```{r}
+#| label: Visualization
+#| message: false
+# base layer: ggplot 
+ggplot(data = salinity, # salinity data frame
+       aes(x = salinity_mS_cm, # salinity on x axis
+           y = pickleweed)) + # pickleweed biomass on y axis
+  # first layer: scatterplot
+  geom_point(size = 3, # larger points
+             color = "firebrick4", # color red
+             alpha = 0.5) + # slight transparency
+  # graph and axis titles
+  labs(x = "Soil Salinity (mS/cm)", # x axis title
+       y = "Pickleweed Biomass (g)", # y axis title
+       title = "Relationship between Soil Salinity and Pickleweed Biomass") + # graph title
+  theme_minimal() # different theme than default
+```
+
+
+
+
