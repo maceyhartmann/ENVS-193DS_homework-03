@@ -214,5 +214,23 @@ Figure 2. The relationship between reading duration (minutes) and pages read acr
 My affective visualization will take the form of a tree, where each major branch represents a different reading location (home, campus, coffee shop, and other). Along each branch, individual leaves will grow to represent reading sessions, with the size of each leaf corresponding to the number of pages read during that session (larger leaves indicating more productive reading sessions). The leaves will be colored by book genre, with each genre (fiction, non-fiction, mystery, and romance) assigned a distinct color, allowing the viewer to see patterns in where and what I tend to read. The leaves will extend across the branch in chronological order from bottom to top, so the tree also tells a story of my reading habits over time. The tree trunk will have the names of the books I read, colored by genre. 
 
 ## b. Create a sketch of your idea
+![](../images/Sketch.png)
 
-(Outline.heic)
+## c. Make a draft of your visualization 
+![](../images/Draft.png)
+## d. Write an artist statement 
+Content: This piece visualizes my personal reading habits over the course of January and February 2026, using a tree as a metaphor for growth and knowledge. Each branch represents a reading location (home, campus, coffee shop, and other), and each leaf encodes an individual reading session. Leaf size reflects pages read and leaf color represents book genre (fiction, non-fiction, mystery, and romance).
+Influences: I was inspired by Stefanie Posavec and Giorgia Lupi's Dear Data project, which demonstrated how personal data could be turned into visualizations. I was also drawn to the symbolism of trees as vessels of knowledge, which felt like a fitting form for data about reading.
+Form: This piece is a hand-drawn and watercolor illustration on paper, using ink for the tree structure and watercolor washes for the leaves.
+Process: I began by organizing my data by reading location and sorting sessions chronologically, then sketched the tree structure with four main branches. I drew individual leaves along each branch in chronological order from bottom to top, sizing each leaf by pages read and painting them with watercolor in four genre-based colors. A legend in the corner keys the colors to their corresponding genres.
+
+## e. Prep your materials to share in class 
+[View slides here](https://docs.google.com/presentation/d/1w05SoDtWxivCA1DPgmQzBUhx5J-jd5SI0EE-QNFI4Go/edit?usp=sharing)
+
+# Problem 4. Statistical Critique 
+
+## a. Revisit and Summarize
+The statistical test is Welch's t-test. There is one response variable that is measured in two different ways: either as catch per unit effort (CPUE; number of legal-sized lobsters per trap) OR as weight per trap (kg). These are separate analyses of the same basic response (lobster abundance/biomass in traps). The predictor variable is year (2008 vs. 2018), compared across different spatial locations relative to marine reserve borders (in-deep, in-edge, out-edge, out-far).
+
+## b. Visual Clarity 
+
