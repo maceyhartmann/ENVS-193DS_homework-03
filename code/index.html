@@ -120,6 +120,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#a.-revisit-and-summarize" id="toc-a.-revisit-and-summarize" class="nav-link" data-scroll-target="#a.-revisit-and-summarize">a. Revisit and Summarize</a></li>
   <li><a href="#b.-visual-clarity" id="toc-b.-visual-clarity" class="nav-link" data-scroll-target="#b.-visual-clarity">b. Visual Clarity</a></li>
+  <li><a href="#c.-aesthetic-clarity" id="toc-c.-aesthetic-clarity" class="nav-link" data-scroll-target="#c.-aesthetic-clarity">c.&nbsp;Aesthetic Clarity</a></li>
+  <li><a href="#d.-recommendations" id="toc-d.-recommendations" class="nav-link" data-scroll-target="#d.-recommendations">d.&nbsp;Recommendations</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -423,9 +425,19 @@ sample estimates:
 <section id="a.-revisit-and-summarize" class="level2">
 <h2 class="anchored" data-anchor-id="a.-revisit-and-summarize">a. Revisit and Summarize</h2>
 <p>The statistical test is Welch’s t-test. There is one response variable that is measured in two different ways: either as catch per unit effort (CPUE; number of legal-sized lobsters per trap) OR as weight per trap (kg). These are separate analyses of the same basic response (lobster abundance/biomass in traps). The predictor variable is year (2008 vs.&nbsp;2018), compared across different spatial locations relative to marine reserve borders (in-deep, in-edge, out-edge, out-far).</p>
+<p><img src="../images/PublicationImage.png" class="img-fluid"></p>
 </section>
 <section id="b.-visual-clarity" class="level2">
 <h2 class="anchored" data-anchor-id="b.-visual-clarity">b. Visual Clarity</h2>
+<p>Figure 3 represents the statistical results clearly and logically. The x-axis displays trap location categories ordered spatially from inside to outside the reserve (in-deep, in-edge, out-edge, out-far), which intuitively reflects the biological gradient of spillover being tested, and the y-axis shows mean CPUE in number of legal lobsters caught per trap. The authors display summary statistics effectively by showing means with standard error bars for both years (2008 as closed circles, 2018 as open circles), and the use of asterisks to denote statistical significance from Welch’s t-tests allows the reader to quickly identify which comparisons were significant. However, the figure does not show the underlying raw data distributions, which makes it difficult to assess the spread and skewness of the data. A violin or jitter plot overlay would have provided a more complete picture of the data underlying the test results.</p>
+</section>
+<section id="c.-aesthetic-clarity" class="level2">
+<h2 class="anchored" data-anchor-id="c.-aesthetic-clarity">c.&nbsp;Aesthetic Clarity</h2>
+<p>Figure 3 has relatively good data-to-ink and ratiohandles visual clutter well overall. The figure uses a clean white background with minimal gridlines, and the simple closed and open circle design effectively distinguishes between the two years without requiring color. The decision to split the figure into two panels (one showing all trap locations and one zooming in on outer sites only) is a smart design choice that prevents crowding and draws attention to the spillover effect at reserve borders without sacrificing the broader spatial context. The only potential source of unnecessary clutter is the duplication of the out-edge and out-far data across both panels, but this redundancy is justified given how ecologically important the outer sites are to the paper’s main argument.</p>
+</section>
+<section id="d.-recommendations" class="level2">
+<h2 class="anchored" data-anchor-id="d.-recommendations">d.&nbsp;Recommendations</h2>
+<p>I would recommend adding the underlying raw data as a jitter layer behind the mean and standard error points, as the current figure only shows summary statistics and obscures the distribution and spread of the raw trap-level CPUE values, which is particularly important given that the authors note most data were non-normal and skewed. I would also recommend using color to distinguish between the two years (for example, a muted blue for 2008 and a warm orange for 2018) rather than relying solely on open versus closed circles, which can be difficult to distinguish at small figure sizes or in print. Finally, I would add a shaded rectangle or background color to clearly delineate the reserve boundary region on the x-axis, visually reinforcing the inside-versus-outside distinction that is central to the paper’s argument about spillover, rather than relying solely on the dashed vertical line which is easy to overlook.</p>
 </section>
 </section>
 
