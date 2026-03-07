@@ -209,3 +209,10 @@ Figure 2. The relationship between reading duration (minutes) and pages read acr
 
 # Problem 3. Affective Visualization 
 
+## a. Describe in words what an affective visualization could look like for your personal data (3-5 sentences).
+
+My affective visualization will take the form of a tree, where each major branch represents a different reading location (home, campus, coffee shop, and other). Along each branch, individual leaves will grow to represent reading sessions, with the size of each leaf corresponding to the number of pages read during that session (larger leaves indicating more productive reading sessions). The leaves will be colored by book genre, with each genre (fiction, non-fiction, mystery, and romance) assigned a distinct color, allowing the viewer to see patterns in where and what I tend to read. The leaves will extend across the branch in chronological order from bottom to top, so the tree also tells a story of my reading habits over time. The tree trunk will have the names of the books I read, colored by genre. 
+
+## b. Create a sketch of your idea
+
+(Outline.heic)
