@@ -218,6 +218,7 @@ My affective visualization will take the form of a tree, where each major branch
 
 ## c. Make a draft of your visualization 
 ![](../images/Draft.png)
+
 ## d. Write an artist statement 
 Content: This piece visualizes my personal reading habits over the course of January and February 2026, using a tree as a metaphor for growth and knowledge. Each branch represents a reading location (home, campus, coffee shop, and other), and each leaf encodes an individual reading session. Leaf size reflects pages read and leaf color represents book genre (fiction, non-fiction, mystery, and romance).
 Influences: I was inspired by Stefanie Posavec and Giorgia Lupi's Dear Data project, which demonstrated how personal data could be turned into visualizations. I was also drawn to the symbolism of trees as vessels of knowledge, which felt like a fitting form for data about reading.
